@@ -1,5 +1,9 @@
 <h3>スケジュール一覧</h3>
 
+<% if flash[:notice] %>
+ <p class="notice"><%= flash[:notice] %></p>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -20,14 +24,30 @@
     <tr>
       <td><%= post.id %></td>
       <td><%= post.title %></td>
-      <td><%= post.satrtDay %> </td>
-      <td><%= post.endDay %> </td>
-      <td><%= post.allDay %></td>
-      <td><%= post.updated_at %></td>
+      <td><%= post.startDay.to_s(:datetime_jp) %> </td>
+      <td><%= post.endDay.to_s(:datetime_jp) %> </td>
+      <td>
+        <% if post.allDay == true %>
+         ◯
+        <% else post.allDay == false %>
+        
+        <% end %>
+      </td>
+      <td><%= post.updated_at.to_s(:datetime_jp) %></td>
+      <td>
+        <%= link_to "確認", post, {class: "kakunin"} %>
+      </td>
+      <td>
+        <%= link_to "編集", [:edit, post], {class: "hensyu"} %>
+      </td>
+      <td>
+        <%= link_to "削除", post, method: :delete, data: {confirm: "本当に削除しますか？",  class: "sakuzyo"} %>
+      </td>
     </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "スケジュール新規登録", :new_post %>
-
+<p>
+<%= link_to "スケジュール新規登録", :new_post, {class: "suke"} %>
+</p>

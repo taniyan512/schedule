@@ -2,16 +2,44 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 table th {
-        background-color: #fbc25b;
+        background-color: #A4C6FF;
         padding: 10px 20px;
     }
  
     table td {
-        background-color: #f9ecd5;
+        background-color:#D9E5FF;
         padding: 10px 20px;
     }
  
     .notice {
-        background-color: #ccf;
+        background-color: #D9E5FF;
         padding: 5px;
+    }
+    
+    h3 {
+        font-size:30px;
+    }
+    
+    .suke {
+        text-decoration: none;
+    }
+    
+    .kakunin {
+        text-decoration: none;
+    }
+    
+    .hensyu {
+        text-decoration: none;
+    }
+    
+    .sakuzyo {
+        text-decoration: none;
+    }
+    
+    .itiran {
+        text-decoration: none;
+    }
+    
+    .touroku {
+        height:30px;
     }
