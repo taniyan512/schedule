@@ -2,7 +2,7 @@
 
 <%= render "shared/error", obj: @post %>
 
-<%= form_for @post do |f| %>
+<%= form_with model: @post do |f| %>
  <table>
    <tr>
      <th><%= f.label :title, "タイトル" %></th>
@@ -18,7 +18,7 @@
    </tr>
    <tr>
      <th><%= f.label :allDay, "終日の場合はチェックを入れる" %></th>
-     <td><%= f.check_box :allDay, {}, true, false %></td>
+     <td><%= f.check_box :allDay %></td>
    </tr>
 　 <tr>
 　   <th><%= f.label :memo, "スケジュールメモ" %></th>

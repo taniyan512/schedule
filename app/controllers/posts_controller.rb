@@ -28,9 +28,7 @@ class PostsController < ApplicationController
   
   def update
     @post = Post.find(params[:id])
-    binding.pry
     if @post.update(params.require(:post).permit(:title,:startDay,:endDay,:allDay,:memo))
-      binding.pry
        flash[:notice] = "スケジュールを編集しました"
        redirect_to :posts
     else
